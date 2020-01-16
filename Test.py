@@ -6,11 +6,21 @@ import random
 import re
 import sys
 
-def birthdayCakeCandles(ar):
-    print(ar)
+
+# Complete the equalizeArray function below.
+def equalizeArray(arr):
+    print(arr)
 
 
 if __name__ == '__main__':
-    arr = [3, 2, 1, 3]
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    birthdayCakeCandles(arr)
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = equalizeArray(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()

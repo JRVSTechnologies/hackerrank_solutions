@@ -1,0 +1,44 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the jumpingOnClouds function below.
+def jumpingOnClouds(c):
+
+    jumps = 0
+    continuous = 0
+    c = iter(c)
+    next(c)
+
+    for n in c:
+        #check if 2 jumps work if not subtract 1?
+
+        #This should be first as it checks after looping through the index
+        #then it should decide wether to jump or not
+        if (continuous == 2 and n != 1):
+            jumps -= 1
+            continuous == 0
+
+        #print(n, end=" cont")
+        if(n == 0):
+            jumps += 1
+            continuous += 1
+        else:
+            continuous = 0
+
+        #print(continuous, end=" jumps")
+        #print(jumps)
+
+    return jumps
+
+
+if __name__ == '__main__':
+
+    c = [0, 0, 1, 0, 0, 0, 1, 0]
+
+    result = jumpingOnClouds(c)
+
